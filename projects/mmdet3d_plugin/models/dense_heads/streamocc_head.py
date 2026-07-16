@@ -554,7 +554,7 @@ class StreamOccHead(BaseModule):
             occ_res = occ_res.int()
             occ_res[score_mask] = 17
 
-        return list(occ_res)
+        return list(occ_res.cpu())
 
 
 class MLN(nn.Module):

@@ -45,8 +45,9 @@ class RandomTransformImage:
                     rotate=rotate,
                 )
                 results['img'][i] = np.array(img).astype(np.uint8)
+
+            for i in range(len(results['lidar2img'])):
                 results['lidar2img'][i] = ida_mat @ results['lidar2img'][i]
-                ida_mats.append(ida_mat)
 
         else:
             raise ValueError()
